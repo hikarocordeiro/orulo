@@ -8,7 +8,7 @@ export const Container = styled.header`
   margin: 30px 0;
 
   img {
-    width: 60px;
+    width: 80px;
   }
 `;
 
