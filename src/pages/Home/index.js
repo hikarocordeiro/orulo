@@ -4,7 +4,7 @@ import {
   MdKeyboardArrowLeft,
   MdKeyboardArrowRight,
 } from 'react-icons/md';
-
+import { formatPrice } from '../../util/format';
 import api from '../../services/api';
 
 import { RealtyList, Pagination } from './styles';
@@ -16,7 +16,10 @@ export default function Home() {
     async function loadBuildings() {
       const response = await api.get('/buildings');
 
-      const data = response.data.buildings;
+      const data = response.data.buildings.map(building => ({
+        ...building,
+        priceFormatted: formatPrice(building.min_price),
+      }));
 
       setBuildings(data);
     }
@@ -34,7 +37,7 @@ export default function Home() {
             <span>
               {building.address.city} / {building.address.state}
               <br />
-              R$ {building.min_price}
+              {building.priceFormatted}
             </span>
 
             <button type="button">
