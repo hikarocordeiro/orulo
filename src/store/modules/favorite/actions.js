@@ -1,6 +1,13 @@
 export function addToFavorite(building) {
   return {
-    type: 'ADD_TO_FAVORITE',
+    type: '@favorite/ADD',
     building,
+  };
+}
+
+export function removeFromFavorite(id) {
+  return {
+    type: '@favorite/REMOVE',
+    id,
   };
 }
