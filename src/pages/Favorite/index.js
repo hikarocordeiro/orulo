@@ -1,8 +1,9 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { MdDelete } from 'react-icons/md';
 
 import { formatPrice } from '../../util/format';
+import * as FavoriteActions from '../../store/modules/favorite/actions';
 
 import { Container, RealtyTable } from './styles';
 
@@ -13,6 +14,12 @@ export default function Favorite() {
       priceFormatted: formatPrice(building.min_price),
     }))
   );
+
+  const dispatch = useDispatch();
+
+  function handleRemoveFavorite(id) {
+    dispatch(FavoriteActions.removeFromFavorite(id));
+  }
 
   return (
     <Container>
@@ -53,7 +60,10 @@ export default function Favorite() {
                 <span>{building.priceFormatted}</span>
               </td>
               <td>
-                <button type="button">
+                <button
+                  type="button"
+                  onClick={() => handleRemoveFavorite(building.id)}
+                >
                   <MdDelete size={20} color="#288acc" />
                 </button>
               </td>
