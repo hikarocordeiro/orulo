@@ -3,7 +3,7 @@ import { darken } from 'polished';
 
 export const RealtyList = styled.ul`
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   grid-gap: 20px;
   list-style: none;
   transition: background 0.2s;
@@ -17,20 +17,21 @@ export const RealtyList = styled.ul`
 
     img {
       align-self: center;
-      max-width: 250px;
+      max-width: 140px;
+      max-height: 79px;
     }
 
     > strong {
-      font-size: 16px;
+      font-size: 12px;
       line-height: 20px;
       color: #333;
       margin-top: 5px;
     }
 
     > span {
-      font-size: 21px;
+      font-size: 14px;
       font-weight: bold;
-      margin: 5px 0 20px;
+      margin: 5px 0 5px;
     }
 
     button {
@@ -63,6 +64,7 @@ export const RealtyList = styled.ul`
         flex: 1;
         text-align: center;
         font-weight: bold;
+        font-size: 9px;
       }
     }
   }
