@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 import {
   MdFavorite,
   MdKeyboardArrowLeft,
@@ -7,10 +8,14 @@ import {
 import { formatPrice } from '../../util/format';
 import api from '../../services/api';
 
+import * as FavoriteActions from '../../store/modules/favorite/actions';
+
 import { RealtyList, Pagination } from './styles';
 
 export default function Home() {
   const [buildings, setBuildings] = useState([]);
+
+  const dispatch = useDispatch();
 
   useEffect(() => {
     async function loadBuildings() {
@@ -27,6 +32,10 @@ export default function Home() {
     loadBuildings();
   }, []);
 
+  function handleAddFavorite(building) {
+    dispatch(FavoriteActions.addToFavorite(building));
+  }
+
   return (
     <>
       <RealtyList>
@@ -40,7 +49,7 @@ export default function Home() {
               {building.priceFormatted}
             </span>
 
-            <button type="button">
+            <button type="button" onClick={() => handleAddFavorite(building)}>
               <div>
                 <MdFavorite size={16} color="#FFF" />
               </div>
