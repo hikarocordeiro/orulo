@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import {
   MdFavorite,
   MdKeyboardArrowLeft,
@@ -14,6 +14,8 @@ import { RealtyList, Pagination } from './styles';
 
 export default function Home() {
   const [buildings, setBuildings] = useState([]);
+
+  const favorited = useSelector(state => state.favorite);
 
   const dispatch = useDispatch();
 
@@ -36,6 +38,10 @@ export default function Home() {
     dispatch(FavoriteActions.addToFavorite(building));
   }
 
+  function handleRemoveFavorite(id) {
+    dispatch(FavoriteActions.removeFromFavorite(id));
+  }
+
   return (
     <>
       <RealtyList>
@@ -49,13 +55,26 @@ export default function Home() {
               {building.priceFormatted}
             </span>
 
-            <button type="button" onClick={() => handleAddFavorite(building)}>
-              <div>
-                <MdFavorite size={16} color="#FFF" />
-              </div>
+            {favorited.find(fav => fav.id === building.id) ? (
+              <button
+                type="button"
+                onClick={() => handleRemoveFavorite(building.id)}
+              >
+                <div>
+                  <MdFavorite size={16} color="#FF312E" />
+                </div>
 
-              <span>ADICIONAR AOS FAVORITOS</span>
-            </button>
+                <span>REMOVER DOS FAVORITOS</span>
+              </button>
+            ) : (
+              <button type="button" onClick={() => handleAddFavorite(building)}>
+                <div>
+                  <MdFavorite size={16} color="#FFF" />
+                </div>
+
+                <span>ADICIONAR AOS FAVORITOS</span>
+              </button>
+            )}
           </li>
         ))}
       </RealtyList>
