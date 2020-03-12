@@ -10,6 +10,7 @@ import logoLight from '../../assets/images/orulo-logo-branco.svg';
 
 export default function Header() {
   const favoriteSize = useSelector(state => state.favorite.length);
+  const heartColor = favoriteSize > 0 ? '#FF312E' : '#FFF';
 
   return (
     <Container>
@@ -22,7 +23,7 @@ export default function Header() {
           <strong>Meus favoritos</strong>
           <span>{favoriteSize} itens</span>
         </div>
-        <MdFavorite size={36} color="#FFF" />
+        <MdFavorite size={36} color={heartColor} />
       </Favorite>
     </Container>
   );
