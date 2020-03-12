@@ -2,35 +2,48 @@ import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import {
   MdFavorite,
-  MdKeyboardArrowLeft,
-  MdKeyboardArrowRight,
+  MdFirstPage,
+  MdLastPage,
+  MdChevronLeft,
+  MdChevronRight,
 } from 'react-icons/md';
+import Pagination from 'react-js-pagination';
 import { formatPrice } from '../../util/format';
 import api from '../../services/api';
 
 import * as FavoriteActions from '../../store/modules/favorite/actions';
 
-import { RealtyList, Pagination } from './styles';
+import { RealtyList, PaginationContent } from './styles';
 
 export default function Home() {
-  const [buildings, setBuildings] = useState([]);
+  const [buildingsList, setBuildingsList] = useState([]);
+  const [currentPage, setCurrentPage] = useState(0);
+  const [totalItems, setTotalItems] = useState(0);
 
   const favorited = useSelector(state => state.favorite);
 
   const dispatch = useDispatch();
 
+  async function loadBuildings(target = 1) {
+    const response = await api.get('/buildings', {
+      params: {
+        page: target
+      }
+    });
+
+    const { buildings, page, total } = response.data;
+
+    const data = buildings.map(building => ({
+      ...building,
+      priceFormatted: formatPrice(building.min_price),
+    }));
+
+    setBuildingsList(data);
+    setCurrentPage(page);
+    setTotalItems(total);
+  }
+
   useEffect(() => {
-    async function loadBuildings() {
-      const response = await api.get('/buildings');
-
-      const data = response.data.buildings.map(building => ({
-        ...building,
-        priceFormatted: formatPrice(building.min_price),
-      }));
-
-      setBuildings(data);
-    }
-
     loadBuildings();
   }, []);
 
@@ -42,10 +55,14 @@ export default function Home() {
     dispatch(FavoriteActions.removeFromFavorite(id));
   }
 
+  function handlePageClick(page) {
+    loadBuildings(page);
+  }
+
   return (
     <>
       <RealtyList>
-        {buildings.map(building => (
+        {buildingsList.map(building => (
           <li key={building.id}>
             <img src={building.default_image['520x280']} alt={building.name} />
             <strong>{building.name}</strong>
@@ -79,17 +96,19 @@ export default function Home() {
         ))}
       </RealtyList>
 
-      <Pagination>
-        <li>
-          <MdKeyboardArrowLeft size={16} />
-        </li>
-        <li>1</li>
-        <li>2</li>
-        <li>3</li>
-        <li>
-          <MdKeyboardArrowRight size={16} />
-        </li>
-      </Pagination>
+      <PaginationContent>
+        <Pagination
+          activePage={currentPage}
+          itemsCountPerPage={10}
+          totalItemsCount={totalItems}
+          pageRangeDisplayed={5}
+          firstPageText={<MdFirstPage />}
+          lastPageText={<MdLastPage />}
+          prevPageText={<MdChevronLeft />}
+          nextPageText={<MdChevronRight />}
+          onChange={e => handlePageClick(e)}
+        />
+      </PaginationContent>
     </>
   );
 }

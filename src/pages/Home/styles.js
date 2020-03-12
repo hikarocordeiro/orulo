@@ -70,6 +70,55 @@ export const RealtyList = styled.ul`
   }
 `;
 
+export const PaginationContent = styled.div`
+  margin-top: 20px;
+  background: #fff;
+  border-radius: 4px;
+  align-items: center;
+
+  .pagination {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    color: #288acc;
+    font-weight: bold;
+
+    li {
+      display: flex;
+      flex-direction: row;
+
+      a {
+        padding: 8px 16px;
+        border-radius: 4px;
+        text-decoration: none;
+        color: #288acc;
+      }
+
+      &:hover {
+        background: #288acc;
+        color: #fff;
+        overflow: hidden;
+
+        a {
+          color: #fff;
+        }
+      }
+    }
+
+    .active {
+        background: #288acc;
+        color: #fff;
+        overflow: hidden;
+
+        a {
+          color: #fff;
+        }
+      }
+  }
+`;
+
+/*
 export const Pagination = styled.div`
   display: flex;
   flex-direction: row;
@@ -96,3 +145,4 @@ export const Pagination = styled.div`
     }
   }
 `;
+*/
