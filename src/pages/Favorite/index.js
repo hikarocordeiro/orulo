@@ -1,9 +1,19 @@
 import React from 'react';
-
+import { useSelector } from 'react-redux';
 import { MdDelete } from 'react-icons/md';
+
+import { formatPrice } from '../../util/format';
+
 import { Container, RealtyTable } from './styles';
 
 export default function Favorite() {
+  const favorites = useSelector(state =>
+    state.favorite.map(building => ({
+      ...building,
+      priceFormatted: formatPrice(building.min_price),
+    }))
+  );
+
   return (
     <Container>
       <RealtyTable>
@@ -18,35 +28,37 @@ export default function Favorite() {
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>
-              <img
-                src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSi_pt5WNuJG0fkz_stvZACU8VDQ_4ycmBuqWAnYxlbRgyUHKqO"
-                alt="Imóvel"
-              />
-            </td>
-            <td>
-              <span>Cidade: Porto Alegre</span>
-              <span>Estado: RS</span>
-              <span>Bairro: Campo Belo</span>
-            </td>
-            <td>
-              <span>Quartos: 4</span>
-              <span>Suítes: 4</span>
-              <span>Vagas Garagem: 4</span>
-            </td>
-            <td>
-              <span>Residencial</span>
-            </td>
-            <td>
-              <span>R$ 750.000,00</span>
-            </td>
-            <td>
-              <button type="button">
-                <MdDelete size={20} color="#288acc" />
-              </button>
-            </td>
-          </tr>
+          {favorites.map(building => (
+            <tr key={building.id}>
+              <td>
+                <img
+                  src={building.default_image['520x280']}
+                  alt={building.name}
+                />
+              </td>
+              <td>
+                <span>Cidade: {building.address.city}</span>
+                <span>Estado: {building.address.state}</span>
+                <span>Bairro: {building.address.area}</span>
+              </td>
+              <td>
+                <span>Quartos: {building.max_bedrooms}</span>
+                <span>Suítes: {building.max_suites}</span>
+                <span>Vagas Garagem: {building.max_parking}</span>
+              </td>
+              <td>
+                <span>{building.finality}</span>
+              </td>
+              <td>
+                <span>{building.priceFormatted}</span>
+              </td>
+              <td>
+                <button type="button">
+                  <MdDelete size={20} color="#288acc" />
+                </button>
+              </td>
+            </tr>
+          ))}
         </tbody>
       </RealtyTable>
     </Container>
