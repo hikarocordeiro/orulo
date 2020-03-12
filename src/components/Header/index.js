@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 import { MdFavorite } from 'react-icons/md';
 
@@ -8,6 +9,8 @@ import { Container, Favorite } from './styles';
 import logoLight from '../../assets/images/orulo-logo-branco.svg';
 
 export default function Header() {
+  const favoriteSize = useSelector(state => state.favorite.length);
+
   return (
     <Container>
       <Link to="/">
@@ -17,7 +20,7 @@ export default function Header() {
       <Favorite to="/favorite">
         <div>
           <strong>Meus favoritos</strong>
-          <span>3 itens</span>
+          <span>{favoriteSize} itens</span>
         </div>
         <MdFavorite size={36} color="#FFF" />
       </Favorite>
