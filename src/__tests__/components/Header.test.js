@@ -33,7 +33,7 @@ describe('Header component', () => {
       })
     );
 
-    const { getByText } = render(
+    render(
       <Router>
         <Header />
       </Router>
@@ -49,7 +49,7 @@ describe('Header component', () => {
       })
     );
 
-    const { getByText } = render(
+    render(
       <Router>
         <Header />
       </Router>
@@ -65,7 +65,7 @@ describe('Header component', () => {
       })
     );
 
-    const { getByText } = render(
+    render(
       <Router>
         <Header />
       </Router>
