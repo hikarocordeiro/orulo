@@ -14,8 +14,6 @@ export default function favorite(state = [], action) {
       return produce(state, draft => {
         const buildingIndex = draft.findIndex(b => b.id === action.id);
 
-        console.tron.log(buildingIndex);
-
         if (buildingIndex >= 0) {
           draft.splice(buildingIndex, 1);
         }
