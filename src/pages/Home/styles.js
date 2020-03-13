@@ -107,42 +107,13 @@ export const PaginationContent = styled.div`
     }
 
     .active {
-        background: #288acc;
-        color: #fff;
-        overflow: hidden;
-
-        a {
-          color: #fff;
-        }
-      }
-  }
-`;
-
-/*
-export const Pagination = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  list-style: none;
-  margin-top: 20px;
-  background: #fff;
-  border-radius: 4px;
-  align-items: center;
-  color: #288acc;
-  font-weight: bold;
-
-  li {
-    display: flex;
-    flex-direction: row;
-
-    padding: 8px 16px;
-    border-radius: 4px;
-
-    &:hover {
       background: #288acc;
       color: #fff;
       overflow: hidden;
+
+      a {
+        color: #fff;
+      }
     }
   }
 `;
-*/
