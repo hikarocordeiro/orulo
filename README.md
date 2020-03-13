@@ -67,6 +67,11 @@ $ git clone https://github.com/hikarocordeiro/orulo.git
 
 Rename the .env-example file to .env and edit the file with the required information.
 
+```bash
+# install dependences
+$ yarn
+```
+
 The system can be run in development mode with the command below:
 ```bash
 # Development mode
