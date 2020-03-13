@@ -2,9 +2,7 @@
     Órulo - ReactJS
 </h1>
 
-<p>
 Live demo on: [![Netlify Status](https://api.netlify.com/api/v1/badges/65bd902e-a6d7-4360-955a-8e11c5c0969a/deploy-status)](https://app.netlify.com/sites/orulo/deploys)
-</p>
 
 <p align="center">
   <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/hikarocordeiro/orulo.svg">
