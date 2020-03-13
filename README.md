@@ -13,6 +13,27 @@
 </p>
 
 <p align="center">
+  <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/hikarocordeiro/orulo.svg">
+
+  <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/hikarocordeiro/orulo.svg">
+
+  <a href="https://www.codacy.com/manual/hikarocordeiro/orulo?utm_source=github.com&utm_medium=referral&utm_content=hikarocordeiro/orulo&utm_campaign=Badge_Grade_Dashboard">
+    <img alt="Codacy grade" src="https://img.shields.io/codacy/grade/c2bd2a2808ba448fb8e71f64a119ad29.svg">
+  </a>
+
+  <img alt="Repository size" src="https://img.shields.io/github/repo-size/hikarocordeiro/orulo">
+  <a href="https://github.com/hikarocordeiro/orulo/commits/master">
+    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/hikarocordeiro/orulo.svg">
+  </a>
+
+  <a href="https://github.com/hikarocordeiro/orulo/issues">
+    <img alt="Repository issues" src="https://img.shields.io/github/issues/hikarocordeiro/orulo.svg">
+  </a>
+
+  <img alt="GitHub" src="https://img.shields.io/github/license/hikarocordeiro/orulo.svg">
+</p>
+
+<p align="center">
   <a href="#gear-technologies">Technologies</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#information_source-how-to-use">Install</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#memo-license">License</a>
