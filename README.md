@@ -1,68 +1,91 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<h1 align="center">
+    Órulo - ReactJS
+</h1>
 
-## Available Scripts
+<p align="center">
+  <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/hikarocordeiro/gympoint-nodejs.svg">
 
-In the project directory, you can run:
+  <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/hikarocordeiro/gympoint-nodejs.svg">
 
-### `yarn start`
+  <a href="https://www.codacy.com/manual/hikarocordeiro/gympoint-nodejs?utm_source=github.com&utm_medium=referral&utm_content=hikarocordeiro/gympoint-nodejs&utm_campaign=Badge_Grade_Dashboard">
+    <img alt="Codacy grade" src="https://img.shields.io/codacy/grade/be94850f95634dc8ba003ccda80e60f9.svg">
+  </a>
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+  <img alt="Repository size" src="https://img.shields.io/github/repo-size/hikarocordeiro/gympoint-nodejs">
+  <a href="https://github.com/hikarocordeiro/gympoint-nodejs/commits/master">
+    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/hikarocordeiro/gympoint-nodejs.svg">
+  </a>
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+  <a href="https://github.com/hikarocordeiro/gympoint-nodejs/issues">
+    <img alt="Repository issues" src="https://img.shields.io/github/issues/hikarocordeiro/gympoint-nodejs.svg">
+  </a>
 
-### `yarn test`
+  <img alt="GitHub" src="https://img.shields.io/github/license/hikarocordeiro/gympoint-nodejs.svg">
+</p>
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<p align="center">
+  <a href="#gear-technologies">Technologies</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#information_source-how-to-use">Instalar</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#memo-license">License</a>
+</p>
 
-### `yarn build`
+## :gear: Technologies
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+This project was developed with the following technologies:
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+-  [ReactJS](https://reactjs.org/)
+-  [Redux](https://redux.js.org/)
+-  [React Router](https://github.com/ReactTraining/react-router)
+-  [Axios](https://github.com/axios/axios)
+-  [Immer](https://github.com/immerjs/immer)
+-  [Polished](https://polished.js.org/)
+-  [styled-components](https://www.styled-components.com/)
+-  [React-Icons](https://react-icons.netlify.com/)
+-  [Reactotron](https://infinite.red/reactotron)
+-  [VS Code][vc] with [EditorConfig][vceditconfig] and [ESLint][vceslint]
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## :information_source: How To Use
 
-### `yarn eject`
+### Installing
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+To clone and run this application, you'll need [Git](https://git-scm.com), [Node.js][nodejs] and [Yarn][yarn] installed on your computer. From your command line:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```bash
+# Clone this repository
+$ git clone https://github.com/hikarocordeiro/orulo.git
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Rename the .env-example file to .env and edit the file with the required information.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+The system can be run in development mode with the command below:
+```bash
+# Development mode
+$ yarn start
+```
 
-## Learn More
+OR you can generate a build and run
+```bash
+# Generate a build
+$ yarn build
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+# Run build
+$ yarn start
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+To test execute the command:
+```bash
+$ yarn test
+```
 
-### Code Splitting
+## :memo: License
+This project is under the MIT license. See the [LICENSE](https://github.com/hikarocordeiro/gympoint-nodejs/blob/master/LICENSE) for more information.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+---
 
-### Analyzing the Bundle Size
+Made with ♥ by Hikaro Cordeiro :wave: [Get in touch!](https://www.linkedin.com/in/hikaro-cordeiro/)
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+[nodejs]: https://nodejs.org/
+[yarn]: https://yarnpkg.com/
+[vc]: https://code.visualstudio.com/
+[vceditconfig]: https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig
+[vceslint]: https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint
