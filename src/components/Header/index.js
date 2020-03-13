@@ -9,7 +9,9 @@ import { Container, Favorite } from './styles';
 import logoLight from '../../assets/images/orulo-logo-branco.svg';
 
 export default function Header() {
-  const favoriteSize = useSelector(state => state.favorite.length);
+  const favoriteSize = useSelector(state =>
+    state.favorite ? state.favorite.length : 0
+  );
   const heartColor = favoriteSize > 0 ? '#FF312E' : '#FFF';
 
   return (

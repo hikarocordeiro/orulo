@@ -27,8 +27,8 @@ export default function Home() {
   async function loadBuildings(target = 1) {
     const response = await api.get('/buildings', {
       params: {
-        page: target
-      }
+        page: target,
+      },
     });
 
     const { buildings, page, total } = response.data;
