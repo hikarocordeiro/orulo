@@ -4,7 +4,10 @@
 
 <p align="center">
     Live Preview ON:
-    <a href="https://orulo.netlify.com/">
+</p>
+
+<p align="center">
+  <a href="https://orulo.netlify.com/" target="_blank">
     <img alt="Netlify Status" src="https://api.netlify.com/api/v1/badges/65bd902e-a6d7-4360-955a-8e11c5c0969a/deploy-status.svg">
   </a>
 </p>
