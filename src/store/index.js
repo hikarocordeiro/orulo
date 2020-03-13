@@ -10,7 +10,9 @@ const persistConfig = {
 };
 
 const enhancer =
-  process.env.NODE_ENV === 'development' ? console.tron.createEnhancer() : null;
+  process.env.NODE_ENV === 'development'
+    ? console.tron.createEnhancer()
+    : undefined;
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
 
